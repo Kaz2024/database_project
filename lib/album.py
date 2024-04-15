@@ -1,4 +1,4 @@
-class Album():
+class Album:
     def __init__(self, id, title, release_year, artist_id):
         self.id = id
         self.title = title
