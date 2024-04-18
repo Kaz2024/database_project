@@ -25,3 +25,9 @@ def test_all(db_connection):
         Album(11,'Fodder on My Wings', 1982, 4),
         Album(12,'Ring Ring', 1973, 2)
         ]
+    
+def test_find(db_connection):
+    db_connection.seed("seeds/music_library.sql")
+    repository = AlbumRepository(db_connection)
+    result = repository.find(3)
+    assert result == Album(3, 'Waterloo', 1974, 2)
